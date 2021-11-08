@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { Route, Switch } from "react-router";
+import { Route, Routes } from "react-router";
 import { Container } from "react-bootstrap";
 
 // Components
@@ -11,14 +11,18 @@ function App() {
     <div>
       <NavBar />
       <Container>
-        <Switch>
-          <Route path="/categories/:categorySlug">
+        <Routes>
+          {/* <Route path="/categories/:categorySlug">
             <CategoryDetail />
           </Route>
           <Route path="/categories">
             <CategoryList />
+          </Route> */}
+
+          <Route path="/">
+            <h4>hello home page</h4>
           </Route>
-        </Switch>
+        </Routes>
       </Container>
     </div>
   );

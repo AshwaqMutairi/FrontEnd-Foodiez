@@ -1,10 +1,10 @@
 import React from "react";
 import { Redirect, useParams } from "react-router";
-import CategoryStore from "../categs/CategoryStore";
+import CategoryCateg from "../categs/CategoryCateg";
 
 const CategoryDetail = () => {
   const { CategorySlug } = useParams();
-  const Category = CategoryStore.Categories.find(
+  const Category = CategoryCateg.Categories.find(
     (Category) => Category.slug === CategorySlug
   );
   if (!Category) return <Redirect to="/Categories" />;

@@ -1,7 +1,7 @@
 import { makeAutoObservable } from "mobx";
 import instance from "./instance";
 
-class CategoryCategs {
+class CategoryCateg {
   constructor() {
     makeAutoObservable(this);
     // this will turn our class into a mobx store and all components can observe the changes that happen in the store
@@ -18,7 +18,7 @@ class CategoryCategs {
       this.categories.push(response.data);
     } catch (error) {
       console.log(
-        "🚀 ~ file: categoryCategs.js ~ line 16 ~ CategoryCategs ~ createCategory= ~ error",
+        "🚀 ~ file: categoryCateg.js ~ line 16 ~ CategoryCateg ~ createCategory= ~ error",
         error
       );
     }
@@ -29,12 +29,31 @@ class CategoryCategs {
       const response = await instance.get("/ingredients");
       this.categories = response.data;
     } catch (error) {
-      console.log("CategoryCategs -> fetchCategories -> error", error);
+      console.log("CategoryCateg -> fetchCategories -> error", error);
+    }
+  };
+
+  createRecipe = async (caregoryId, recipe) => {
+    try {
+      const formData = new FormData();
+      for (const key in recipe) {
+        formData.append(key, recipe[key]);
+      }
+      const res = await instance.post(
+        `/categories/${caregoryId}/recipes`,
+        formData
+      );
+      caregoryId.recipe.push(res.data);
+    } catch (error) {
+      console.log(
+        "🚀 ~ file: categoryCateg.js ~ line 45 ~ createRecipe= ~ error",
+        error
+      );
     }
   };
 }
 
-const categoryCategs = new CategoryCategs();
-categoryCategs.fetchCategories();
+const categoryCateg = new CategoryCateg();
+categoryCateg.fetchCategories();
 
-export default categoryCategs;
+export default categoryCateg;
