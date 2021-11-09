@@ -1,5 +1,5 @@
 import { Button, Card, Col } from "react-bootstrap";
-import categoryCateg from "../stores/categoryCateg";
+import categoryCateg from "../categs/categoryCateg";
 import RecipeModal from "./RecipeModal";
 
 function RecipeCard({ recipe }) {
@@ -12,9 +12,6 @@ function RecipeCard({ recipe }) {
         <Card.Body>
           <Card.Title>{recipe.name}</Card.Title>
           <Card.Text>{recipe.description}</Card.Text>
-
-          {/* we have to add the ingrediants */}
-
           <Button className="m-1" onClick={handleDelete} variant="danger">
             DELETE
           </Button>

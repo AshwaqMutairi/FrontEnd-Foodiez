@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Route, Routes } from "react-router";
 import { Container } from "react-bootstrap";
+import { CategoryList } from "./components/CategoryList";
 
 // Components
 import NavBar from "./components/NavBar";
@@ -12,15 +13,11 @@ function App() {
       <NavBar />
       <Container>
         <Routes>
-          {/* <Route path="/categories/:categorySlug">
-            <CategoryDetail />
-          </Route>
           <Route path="/categories">
             <CategoryList />
-          </Route> */}
-
+          </Route>
           <Route path="/">
-            <h4>hello home page</h4>
+            <h4>hello</h4>
           </Route>
         </Routes>
       </Container>

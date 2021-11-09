@@ -45,6 +45,20 @@ function RecipeModal({ categoryId }) {
                 onChange={handleChange}
               />
             </InputGroup>
+
+            {/* Recipe creator shoud be the user so he don't need 
+            to enter his name! */}
+
+            {/* <InputGroup className="mb-3">
+              <InputGroup.Text>Creator</InputGroup.Text>
+              <FormControl
+                placeholder="Your recipe's name"
+                name="name"
+                value={recipe.name}
+                type="text"
+                onChange={handleChange}
+              />
+            </InputGroup> */}
             <InputGroup className="mb-3">
               <InputGroup.Text>Image</InputGroup.Text>
               <FormControl
