@@ -1,26 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Route, Routes } from "react-router";
-import { Container } from "react-bootstrap";
-import { CategoryList } from "./components/CategoryList";
-
-// Components
+import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div>
+      <Home />
       <NavBar />
-      <Container>
-        <Routes>
-          <Route path="/categories">
-            <CategoryList />
-          </Route>
-          <Route path="/">
-            <h4>hello</h4>
-          </Route>
-        </Routes>
-      </Container>
+      <h4>NavBar</h4>
     </div>
   );
 }
