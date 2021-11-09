@@ -33,6 +33,12 @@ class AuthStore {
     }
   };
 
+  signout = () => {
+    delete instance.defaults.headers.common.Authorization;
+    localStorage.removeItem("myToken");
+    this.user = null;
+  };
+
   checkForToken = () => {
     const token = localStorage.getItem("myToken");
     if (token) {
