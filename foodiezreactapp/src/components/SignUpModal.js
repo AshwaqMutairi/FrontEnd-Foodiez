@@ -72,7 +72,7 @@ export default function SignUpModal() {
             <Form.Group className="mb-3">
               <Form.Label>First Name</Form.Label>
               <Form.Control
-                type="firstname"
+                type="text"
                 onChange={handleChange}
                 name="firstName"
                 placeholder="Enter your first name"
@@ -81,7 +81,7 @@ export default function SignUpModal() {
             <Form.Group className="mb-3">
               <Form.Label>Last Name</Form.Label>
               <Form.Control
-                type="lastname"
+                type="text"
                 onChange={handleChange}
                 name="lastName"
                 placeholder="Enter your last name"
