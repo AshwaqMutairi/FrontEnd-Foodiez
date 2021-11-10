@@ -14,9 +14,9 @@ function RecipeList() {
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
 
-  //   const recipes = recipeStore.recipes
-  //     .filter((recipe) => recipe.name.toLowerCase().includes(query.toLowerCase()))
-  //     .map((recipe) => <RecipeDetail recipe={recipe} />);
+  const recipes = recipeStore.recipes
+    .filter((recipe) => recipe.name.toLowerCase().includes(query.toLowerCase()))
+    .map((recipe) => <RecipeDetail recipe={recipe} />);
 
   return (
     <div>
@@ -29,7 +29,7 @@ function RecipeList() {
       </p>
 
       <AddRecipeModal isOpen={isOpen} closeModal={closeModal} />
-      {/* <div className="col-md-auto text-center list">{recipes}</div> */}
+      <div className="col-md-auto text-center list">{recipes}</div>
     </div>
   );
 }

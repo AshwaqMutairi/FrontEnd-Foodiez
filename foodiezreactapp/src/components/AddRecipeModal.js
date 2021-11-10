@@ -38,7 +38,7 @@ export default function AddRecipeModal(props) {
             <Form.Control
               type="text"
               onChange={handleChange}
-              name="title"
+              name="name"
               placeholder="Enter Recipe Name"
             />
           </Form.Group>
@@ -55,7 +55,7 @@ export default function AddRecipeModal(props) {
           <Form.Group className="mb-3">
             <Form.Label>Recipe</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               onChange={handleChange}
               name="recipe"
               placeholder="Enter the steps for your recipe"
@@ -64,9 +64,9 @@ export default function AddRecipeModal(props) {
           <Form.Group className="mb-3">
             <Form.Label>Owner</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               onChange={handleChange}
-              name="limit"
+              name="owner"
               placeholder="Enter you name"
             />
           </Form.Group>

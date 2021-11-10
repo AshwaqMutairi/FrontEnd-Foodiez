@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-import categoryStore from "../stores/categoryStore";
+import recipeStore from "../stores/recipeStore";
 
-export default function AddCategoryModal(props) {
-  const [category, setCategory] = useState({
-    name: "",
-    image: "",
+export default function UpdateRecipeModal(props) {
+  const [recipe, setRecipe] = useState({
+    name: props.recipe.name,
+    image: props.recipe.image,
+    recipe: props.recipe.recipe,
+    ingredients: props.recipe.ingredients,
+    owner: props.recipe.owner,
   });
 
   const handleChange = (event) => {
-    setCategory({ ...category, [event.target.name]: event.target.value });
+    setRecipe({ ...recipe, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    categoryStore.createCategory(category);
+    recipeStore.updateRecipe(props.recipe._id, recipe);
     props.closeModal();
   };
 
@@ -27,18 +30,18 @@ export default function AddCategoryModal(props) {
     >
       <Modal.Header>
         <Modal.Title id="contained-modal-title-vcenter">
-          Add Category
+          Update Recipe
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
           <Form.Group className="mb-3">
-            <Form.Label>Category Name</Form.Label>
+            <Form.Label>Recipe Name</Form.Label>
             <Form.Control
               type="text"
               onChange={handleChange}
               name="name"
-              placeholder="Enter Category Name"
+              placeholder="Enter Recipe Name"
             />
           </Form.Group>
 
@@ -51,12 +54,30 @@ export default function AddCategoryModal(props) {
               placeholder="Enter image url"
             />
           </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Recipe</Form.Label>
+            <Form.Control
+              type="text"
+              onChange={handleChange}
+              name="recipe"
+              placeholder="Enter the steps for your recipe"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Owner</Form.Label>
+            <Form.Control
+              type="text"
+              onChange={handleChange}
+              name="owner"
+              placeholder="Enter you name"
+            />
+          </Form.Group>
         </Form>
-        <p>only registered users can create Category</p>
+        <p>only registered users can Update Recipes</p>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="warning" onClick={handleSubmit}>
-          Create Category
+          Update Recipe
         </Button>
         <Button variant="warning" onClick={props.closeModal}>
           Close
