@@ -5,12 +5,9 @@ import { Link } from "react-router-dom";
 function CategoryItem(props) {
   const category = props.category;
   return (
-    <Link
-      className="p-5 m-5 col-lg-4 col-sm-12 itemWrapper"
-      to={`/${category.slug}`}
-    >
+    <Link className="p-5 m-5 col-lg-4 col-sm-12 itemWrapper" to="/recipes">
       <div>
-        <p>{category.name}</p>
+        <h4>{category.name}</h4>
         <img
           className="card-image-top"
           src={category.image}

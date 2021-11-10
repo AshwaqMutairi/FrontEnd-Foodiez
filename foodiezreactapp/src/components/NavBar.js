@@ -7,7 +7,7 @@ import React from "react";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";
 
-import logo from "../components/logo.png";
+import logo from "../images/logo.png";
 
 function NavBar() {
   return (
@@ -31,9 +31,9 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto ">
-            <Link to="/categories">
-              <Nav.Link>Category</Nav.Link>
-            </Link>
+            <Nav.Link>
+              <Link to="/categories"> Categories</Link>
+            </Nav.Link>
             <Nav.Link> About Us</Nav.Link>
             <NavDropdown title="Other" id="collasible-nav-dropdown">
               <NavDropdown.Item>Highest Rated</NavDropdown.Item>
@@ -50,8 +50,8 @@ function NavBar() {
                   <p className="hello-user">
                     Hello <span>{authStore.user.username} </span>
                     <Button
-                      variant="outline-info"
-                      onClick={() => authStore.signout()}
+                      variant="outline-warning"
+                      onClick={authStore.signout}
                     >
                       Logout
                     </Button>

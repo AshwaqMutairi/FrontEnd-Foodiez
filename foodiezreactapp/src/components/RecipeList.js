@@ -1,39 +1,37 @@
 import React, { useState } from "react";
-import CategoryItem from "./CategoryItem";
+import RecipeDetail from "./RecipeDetail";
 import { Button } from "react-bootstrap";
-import categoryStore from "../stores/categoryStore";
+import recipeStore from "../stores/recipeStore";
 import { observer } from "mobx-react";
 import SearchBar from "./SearchBar";
-import AddCategoryModal from "./AddCategoryModal";
+import AddRecipeModal from "./AddRecipeModal";
 // add cat modal
 
-function CategoryList() {
+function RecipeList() {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
 
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
 
-  const categories = categoryStore.categories
-    .filter((category) =>
-      category.name.toLowerCase().includes(query.toLowerCase())
-    )
-    .map((category) => <CategoryItem category={category} />);
+  //   const recipes = recipeStore.recipes
+  //     .filter((recipe) => recipe.name.toLowerCase().includes(query.toLowerCase()))
+  //     .map((recipe) => <RecipeDetail recipe={recipe} />);
 
   return (
     <div>
       <br />
       <p className="search">
         <Button className="add-button" variant="warning" onClick={openModal}>
-          Add Category
+          Add Recipe
         </Button>
         <SearchBar setQuery={setQuery} />{" "}
       </p>
 
-      <AddCategoryModal isOpen={isOpen} closeModal={closeModal} />
-      <div className="col-md-auto text-center list">{categories}</div>
+      <AddRecipeModal isOpen={isOpen} closeModal={closeModal} />
+      {/* <div className="col-md-auto text-center list">{recipes}</div> */}
     </div>
   );
 }
 
-export default observer(CategoryList);
+export default observer(RecipeList);
