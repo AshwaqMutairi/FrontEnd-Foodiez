@@ -14,6 +14,7 @@ function CategoryList() {
   const closeModal = () => setIsOpen(false);
   const openModal = () => setIsOpen(true);
 
+  if (categoryStore.loading) return <h1>Loading...</h1>;
   const categories = categoryStore.categories
     .filter((category) =>
       category.name.toLowerCase().includes(query.toLowerCase())
