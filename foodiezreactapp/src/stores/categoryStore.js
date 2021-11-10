@@ -8,13 +8,15 @@ class CategoryStore {
 
   categories = [];
 
+  loading = true;
+
   createCategory = async (newCategory) => {
     try {
-      const formData = new FormData();
-      for (const key in newCategory) {
-        formData.append(key, newCategory[key]);
-      }
-      const response = await instance.post("/categories", formData);
+      // const formData = new FormData();
+      // for (const key in newCategory) {
+      //   formData.append(key, newCategory[key]);
+      // }
+      const response = await instance.post("/categories", newCategory); //formData
       this.categories.push(response.data);
     } catch (error) {
       console.log(error);
@@ -25,6 +27,7 @@ class CategoryStore {
     try {
       const response = await instance.get("/categories");
       this.categories = response.data;
+      this.loading = false;
     } catch (error) {
       console.log(error);
     }

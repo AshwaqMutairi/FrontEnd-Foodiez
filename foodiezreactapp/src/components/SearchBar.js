@@ -1,10 +1,13 @@
 import React from "react";
 // Styling
 
-const SearchBar = (props) => {
+function SearchBar({ setQuery }) {
   const checkLength = (string) => {
-    if (string.length >= 2) props.setQuery(string);
-    else props.setQuery("");
+    if (string.length >= 2) {
+      setQuery(string);
+    } else {
+      setQuery("");
+    }
   };
 
   return (
@@ -16,6 +19,6 @@ const SearchBar = (props) => {
       />
     </div>
   );
-};
+}
 
 export default SearchBar;

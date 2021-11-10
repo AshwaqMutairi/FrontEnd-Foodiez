@@ -9,7 +9,6 @@ export default function SignUpModal() {
     email: "",
     firstName: "",
     lastName: "",
-    image: "",
   });
 
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +25,7 @@ export default function SignUpModal() {
 
   return (
     <div>
-      <Button variant="outline-info " onClick={() => setIsOpen(true)}>
+      <Button variant="outline-warning " onClick={() => setIsOpen(true)}>
         Sign up
       </Button>
       <Modal
