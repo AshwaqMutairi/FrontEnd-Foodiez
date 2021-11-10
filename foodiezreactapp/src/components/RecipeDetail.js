@@ -18,7 +18,7 @@ function RecipeItem(props) {
       <div>
         <h1>hello</h1>
         <h4>{recipe.name}</h4>
-        <h4>{recipe.owner}</h4>
+        <h4>{recipe.owner.name}</h4>
         <img className="card-image-top" src={recipe.image} alt={recipe.name} />
         <h4>{recipe.ingredients}</h4>
         <h4>{recipe.recipe}</h4>
