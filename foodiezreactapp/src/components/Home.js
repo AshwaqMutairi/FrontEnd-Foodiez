@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Home() {
@@ -7,16 +7,13 @@ export default function Home() {
     <section id="home">
       <div className="hero-image">
         <div className="hero-text fade-in-text text-size">
-          <h3 className="home-title"> WELCOME TO HS SOCIETY!</h3>
+          <h3 className="home-title"> WELCOME TO FOODIEZ!</h3>
           <br />
           <hr />
           <br />
-          <h6>
-            A place to join and gather with like-minded indivuals to help make
-            the world a better place.
-          </h6>
+          <h6>Your all-in-one website for all things kitchen!</h6>
           <br />
-          <p>One jam3ya at a time...</p>
+          <p>One recipe at a time...</p>
         </div>
       </div>
     </section>

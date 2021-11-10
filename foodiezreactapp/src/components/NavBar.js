@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import authStore from "../stores/authStore";
 import { observer } from "mobx-react";
-import React, { useState } from "react";
+import React from "react";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";
 
-// import logo from "../Components/communities.png";
+import logo from "../components/logo.png";
 
 function NavBar() {
   return (
@@ -20,7 +20,7 @@ function NavBar() {
         {/* <Link to="/"> */}
         <a class="navbar-brand">
           <img
-            //   src={logo}
+            src={logo}
             width="50"
             height="50"
             class="d-inline-block align-top"
