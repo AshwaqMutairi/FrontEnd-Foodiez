@@ -13,7 +13,7 @@ function CategoryList() {
   //   const closeModal = () => setIsOpen(false);
   //   const openModal = () => setIsOpen(true);
 
-  const categories = categoryStore.category
+  const categories = categoryStore.categories
     .filter((category) =>
       category.name.toLowerCase().includes(query.toLowerCase())
     )
@@ -29,7 +29,7 @@ function CategoryList() {
         <SearchBar setQuery={setQuery} />{" "}
       </p>
 
-      {/* <AddJam3yaModal isOpen={isOpen} closeModal={closeModal} /> */}
+      {/* <AddCategoryModal isOpen={isOpen} closeModal={closeModal} /> */}
       <div className="col-md-auto text-center list">{categories}</div>
     </div>
   );

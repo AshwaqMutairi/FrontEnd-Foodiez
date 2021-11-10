@@ -1,4 +1,4 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import authStore from "../stores/authStore";
@@ -17,23 +17,23 @@ function NavBar() {
       expand="lg"
     >
       <Container>
-        {/* <Link to="/"> */}
-        <a class="navbar-brand">
-          <img
-            src={logo}
-            width="50"
-            height="50"
-            class="d-inline-block align-top"
-            alt=""
-          />
-        </a>
-        {/* </Link> */}
+        <Link to="/">
+          <a class="navbar-brand">
+            <img
+              src={logo}
+              width="50"
+              height="50"
+              class="d-inline-block align-top"
+              alt=""
+            />
+          </a>
+        </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto ">
-            {/* <Link to="/category-list"> */}
-            <Nav.Link>Category</Nav.Link>
-            {/* </Link> */}
+            <Link to="/categories">
+              <Nav.Link>Category</Nav.Link>
+            </Link>
             <Nav.Link> About Us</Nav.Link>
             <NavDropdown title="Other" id="collasible-nav-dropdown">
               <NavDropdown.Item>Highest Rated</NavDropdown.Item>
