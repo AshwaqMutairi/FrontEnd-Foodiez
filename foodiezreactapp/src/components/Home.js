@@ -7,13 +7,13 @@ export default function Home() {
     <section id="home">
       <div className="hero-image">
         <div className="hero-text fade-in-text text-size">
-          <h3 className="home-title"> WELCOME TO FOODIEZ!</h3>
+          <h1 className="home-title"> Weclome to Foodiez!</h1>
           <br />
           <hr />
           <br />
-          <h6>Your all-in-one website for all things kitchen!</h6>
+          <h3>Your all-in-one website for all things kitchen!</h3>
           <br />
-          <p>One recipe at a time...</p>
+          <h4>One recipe at a time...</h4>
         </div>
       </div>
     </section>

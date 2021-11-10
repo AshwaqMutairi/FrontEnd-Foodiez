@@ -22,7 +22,7 @@ function SignInModal(props) {
 
   return (
     <div>
-      <Button variant="outline-info" onClick={() => setIsOpen(true)}>
+      <Button variant="outline-warning" onClick={() => setIsOpen(true)}>
         Sign in
       </Button>
       <Modal
