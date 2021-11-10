@@ -11,7 +11,7 @@ export default function SignUpModal() {
     lastName: "",
     image: "",
   });
-
+  // REVIEW: Remove image from your state
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => setIsOpen(false);
 

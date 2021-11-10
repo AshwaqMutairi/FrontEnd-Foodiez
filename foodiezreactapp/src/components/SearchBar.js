@@ -2,6 +2,7 @@ import React from "react";
 // Styling
 
 const SearchBar = (props) => {
+  // REVIEW: Destructure props: ({setQuery}) instead of (props)
   const checkLength = (string) => {
     if (string.length >= 2) props.setQuery(string);
     else props.setQuery("");

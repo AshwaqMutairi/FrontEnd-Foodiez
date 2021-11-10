@@ -6,7 +6,7 @@ import { observer } from "mobx-react";
 import React from "react";
 import SignInModal from "./SignInModal";
 import SignUpModal from "./SignUpModal";
-
+// REVIEW: Images shouldn't be in the components folder
 import logo from "../components/logo.png";
 
 function NavBar() {
@@ -51,6 +51,8 @@ function NavBar() {
                     Hello <span>{authStore.user.username} </span>
                     <Button
                       variant="outline-info"
+                      // REVIEW: A cleaner way to do this is
+                      // onClick={authStore.signout}
                       onClick={() => authStore.signout()}
                     >
                       Logout
