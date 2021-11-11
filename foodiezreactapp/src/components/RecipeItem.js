@@ -25,18 +25,6 @@ function RecipeItem(props) {
         <img className="card-image-top" src={recipe.image} alt={recipe.name} />
         <h4>{recipe.ingredients}</h4>
         <h4>{recipe.recipe}</h4>
-        {/* <Button
-          className="buttons"
-          variant="outline-warning"
-          onClick={openModal}
-        >
-          Update Recipe
-        </Button>
-        <UpdateRecipeModal
-          isOpen={isOpen}
-          closeModal={closeModal}
-          recipe={recipe}
-        /> */}
       </div>
     </Link>
   );

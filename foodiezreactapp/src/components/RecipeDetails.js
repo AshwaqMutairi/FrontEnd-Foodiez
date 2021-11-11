@@ -16,7 +16,10 @@ function RecipeDetails(props) {
 
   const openModal = () => setIsOpen(true);
 
-  const recipe = props.recipe;
+  // const recipe = props.recipe;
+
+  const { recipeId } = useParams();
+  const recipe = recipeStore.recipes.find((recipe) => recipeId === recipe._id);
 
   return (
     <div className="detailBackground">
@@ -24,27 +27,10 @@ function RecipeDetails(props) {
       <br />
       <br />
       <div>
-        <h2>Recipe: </h2>
-        <div>
-          <div className="row justify-content-center align-self-center col-10">
-            <p>Ingredients: </p>
-            <p>Steps: </p>
-            <p>Recipe Owner:</p>
-          </div>
-          <p>
-            <Button
-              className="buttons"
-              variant="outline-warning"
-              onClick={openModal}
-            >
-              Update Recipe
-            </Button>
-          </p>
-        </div>
         {recipe && ( // if there is recipe show its data
           <>
             <br />
-            <h1>hi</h1>
+            <h1></h1>
             <h4> Recipe: {recipe.name}</h4>
             <br />
             <img className="card-image-top " src={recipe.image} alt="recipe" />
@@ -53,7 +39,7 @@ function RecipeDetails(props) {
             <div className="row justify-content-center align-self-center col-10">
               <p>Ingredients: {recipe.ingredients}</p>
               <p>Steps: {recipe.recipe}</p>
-              <p>Recipe Owner: {recipe.name.owner}</p>
+              <p>Recipe Owner: {recipe.owner.username}</p>
             </div>
             <br />
             <p className="buttons">
