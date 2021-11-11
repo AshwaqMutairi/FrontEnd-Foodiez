@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import recipeStore from "../stores/recipeStore";
+import categoryStore from "../stores/categoryStore";
+import { useParams } from "react-router";
 
 export default function AddRecipeModal(props) {
   const [recipe, setRecipe] = useState({
@@ -10,13 +12,17 @@ export default function AddRecipeModal(props) {
     ingredients: "",
     owner: "",
   });
+  // const { categoryId } = useParams();
 
+  // const category = categoryStore.categories.find(
+  //   (category) => category._id === categoryId
+  // );
   const handleChange = (event) => {
     setRecipe({ ...recipe, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    recipeStore.createRecipe(recipe);
+    recipeStore.createRecipe(props.categoryId, recipe); //categoryId,
     props.closeModal();
   };
 
