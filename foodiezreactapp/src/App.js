@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import CategoryList from "./components/CategoryList";
 import RecipeList from "./components/RecipeList";
 import { Route, Switch } from "react-router";
+import RecipeDetails from "./components/RecipeDetails";
 // import Moment from "react-moment";
 
 function App() {
@@ -11,6 +12,10 @@ function App() {
     <div>
       <NavBar />
       <Switch>
+        <Route exact path="/categories/:categoryId/recipes/:recipeId">
+          <RecipeDetails />
+        </Route>
+
         <Route exact path="/categories/:categoryId/recipes">
           <RecipeList />
         </Route>
