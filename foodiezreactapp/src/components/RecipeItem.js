@@ -21,10 +21,10 @@ function RecipeItem(props) {
     >
       <div>
         <h4>{recipe.name}</h4>
-        <h4>{recipe.owner.name}</h4>
         <img className="card-image-top" src={recipe.image} alt={recipe.name} />
-        <h4>{recipe.ingredients}</h4>
-        <h4>{recipe.recipe}</h4>
+        <h5>{recipe.owner.username}</h5>
+        {/* <h4>{recipe.ingredients}</h4>
+        <h4>{recipe.recipe}</h4> */}
       </div>
     </Link>
   );
