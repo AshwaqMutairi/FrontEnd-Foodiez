@@ -59,10 +59,10 @@ function SignInModal(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="info" onClick={handleSubmit}>
+          <Button variant="warning" onClick={handleSubmit}>
             Sign In
           </Button>
-          <Button variant="info" onClick={closeModal}>
+          <Button variant="warning" onClick={closeModal}>
             Close
           </Button>
         </Modal.Footer>
