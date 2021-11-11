@@ -12,17 +12,17 @@ export default function AddRecipeModal(props) {
     ingredients: "",
     owner: "",
   });
-  // const { categoryId } = useParams();
 
-  // const category = categoryStore.categories.find(
-  //   (category) => category._id === categoryId
-  // );
   const handleChange = (event) => {
     setRecipe({ ...recipe, [event.target.name]: event.target.value });
   };
+
+  const handleImage = (event) =>
+    setRecipe({ ...recipe, image: event.target.files[0] });
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    recipeStore.createRecipe(props.categoryId, recipe); //categoryId,
+    recipeStore.createRecipe(props.categoryId, recipe);
     props.closeModal();
   };
 
@@ -50,13 +50,8 @@ export default function AddRecipeModal(props) {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Image url</Form.Label>
-            <Form.Control
-              type="text"
-              onChange={handleChange}
-              name="image"
-              placeholder="Enter image url"
-            />
+            <Form.Label>Image</Form.Label>
+            <Form.Control type="file" onChange={handleImage} name="image" />
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label>Recipe</Form.Label>

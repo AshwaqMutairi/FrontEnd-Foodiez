@@ -43,7 +43,7 @@ export default function AddCategoryModal(props) {
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Label>Image url</Form.Label>
+            <Form.Label>Image</Form.Label>
             <Form.Control
               type="text"
               onChange={handleChange}
