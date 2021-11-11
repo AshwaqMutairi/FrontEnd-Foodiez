@@ -17,11 +17,11 @@ class RecipeStore {
       for (const key in newRecipe) {
         formData.append(key, newRecipe[key]);
       }
+      console.log("newRecipe", newRecipe);
       const response = await instance.post(
         `categories/${categoryId}/recipies`,
-        newRecipe
+        formData
       );
-      console.log("categoryId", response);
       const category = categoryStore.categories.find(
         (category) => category._id === categoryId
       );
