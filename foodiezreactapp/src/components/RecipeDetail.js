@@ -6,6 +6,7 @@ import UpdateRecipeModal from "./UpdateRecipeModal";
 
 function RecipeItem(props) {
   const recipe = props.recipe;
+  const category = props.category;
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +15,10 @@ function RecipeItem(props) {
   const openModal = () => setIsOpen(true);
 
   return (
-    <Link className="p-5 m-5 col-lg-4 col-sm-12 itemWrapper" to="/recipes">
+    <Link
+      className="p-5 m-5 col-lg-4 col-sm-12 itemWrapper"
+      to={`/recipes/${recipe._id}`}
+    >
       <div>
         <h1>hello</h1>
         <h4>{recipe.name}</h4>
