@@ -10,7 +10,7 @@ export default function AddRecipeModal(props) {
     image: "",
     recipe: "",
     ingredients: "",
-    owner: "",
+    // owner: "",
   });
 
   const handleChange = (event) => {
@@ -63,12 +63,12 @@ export default function AddRecipeModal(props) {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Owner</Form.Label>
+            <Form.Label>Ingredients</Form.Label>
             <Form.Control
               type="text"
               onChange={handleChange}
-              name="owner"
-              placeholder="Enter you name"
+              name="ingredients"
+              placeholder="Enter needed ingredients for your recipe"
             />
           </Form.Group>
         </Form>

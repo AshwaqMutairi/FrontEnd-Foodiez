@@ -18,10 +18,15 @@ function RecipeList() {
   const category = categoryStore.categories.find(
     (category) => category._id === categoryId
   );
-  const recipes = recipeStore.recipes
-    .filter((recipe) => recipe.category.name === category.name)
+  console.log(category.recipies);
+  const recipes = category.recipies
     .filter((recipe) => recipe.name.toLowerCase().includes(query.toLowerCase()))
     .map((recipe) => <RecipeItem recipe={recipe} />);
+
+  // const recipes = recipeStore.recipes
+  //   .filter((recipe) => recipe.category.name === category.name)
+  //   .filter((recipe) => recipe.name.toLowerCase().includes(query.toLowerCase()))
+  //   .map((recipe) => <RecipeItem recipe={recipe} />);
 
   return (
     <div>
