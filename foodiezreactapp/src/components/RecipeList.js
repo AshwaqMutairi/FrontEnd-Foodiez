@@ -32,7 +32,11 @@ function RecipeList() {
         </Button>
         <SearchBar setQuery={setQuery} />{" "}
       </p>
-      <AddRecipeModal isOpen={isOpen} closeModal={closeModal} />
+      <AddRecipeModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        categoryId={categoryId}
+      />
       <div className="col-md-auto text-center list">{recipes}</div>
     </div>
   );

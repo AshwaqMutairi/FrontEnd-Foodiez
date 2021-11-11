@@ -1,5 +1,6 @@
 import { makeAutoObservable } from "mobx";
 import instance from "./instance";
+import categoryStore from "./categoryStore";
 
 class RecipeStore {
   constructor() {
@@ -10,14 +11,21 @@ class RecipeStore {
 
   loading = true;
 
-  createRecipe = async (newRecipe) => {
+  createRecipe = async (categoryId, newRecipe) => {
     try {
-      // const formData = new FormData();
-      // for (const key in newRecipe) {
-      //   formData.append(key, newRecipe[key]);
-      // }
-      const response = await instance.post("/recipes", newRecipe); //formData
-      this.recipes.push(response.data);
+      const formData = new FormData();
+      for (const key in newRecipe) {
+        formData.append(key, newRecipe[key]);
+      }
+      const response = await instance.post(
+        `categories/${categoryId}/recipies`,
+        newRecipe
+      );
+      console.log("categoryId", response);
+      const category = categoryStore.categories.find(
+        (category) => category._id === categoryId
+      );
+      category.recipies.push(response.data);
     } catch (error) {
       console.log(error);
     }
