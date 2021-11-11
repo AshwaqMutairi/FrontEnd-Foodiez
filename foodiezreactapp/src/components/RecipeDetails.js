@@ -16,8 +16,6 @@ function RecipeDetails(props) {
 
   const openModal = () => setIsOpen(true);
 
-  const slug = useParams().recipeSlug;
-
   const recipe = props.recipe;
 
   return (
@@ -27,7 +25,22 @@ function RecipeDetails(props) {
       <br />
       <div>
         <h2>Recipe: </h2>
-
+        <div>
+          <div className="row justify-content-center align-self-center col-10">
+            <p>Ingredients: </p>
+            <p>Steps: </p>
+            <p>Recipe Owner:</p>
+          </div>
+          <p>
+            <Button
+              className="buttons"
+              variant="outline-warning"
+              onClick={openModal}
+            >
+              Update Recipe
+            </Button>
+          </p>
+        </div>
         {recipe && ( // if there is recipe show its data
           <>
             <br />
