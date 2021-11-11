@@ -26,12 +26,15 @@ function RecipeList() {
   return (
     <div>
       <br />
-      <p className="search">
-        <Button className="add-button" variant="warning" onClick={openModal}>
-          Add Recipe
-        </Button>
-        <SearchBar setQuery={setQuery} />{" "}
-      </p>
+      <div className="header">
+        <h4 className="category-title">{category.name}</h4>
+        <p className="search">
+          <Button className="add-button" variant="warning" onClick={openModal}>
+            Add Recipe
+          </Button>
+          <SearchBar setQuery={setQuery} />{" "}
+        </p>
+      </div>
       <AddRecipeModal
         isOpen={isOpen}
         closeModal={closeModal}
