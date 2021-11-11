@@ -23,11 +23,6 @@ function RecipeList() {
     .filter((recipe) => recipe.name.toLowerCase().includes(query.toLowerCase()))
     .map((recipe) => <RecipeItem recipe={recipe} />);
 
-  // const recipes = recipeStore.recipes
-  //   .filter((recipe) => recipe.category.name === category.name)
-  //   .filter((recipe) => recipe.name.toLowerCase().includes(query.toLowerCase()))
-  //   .map((recipe) => <RecipeItem recipe={recipe} />);
-
   return (
     <div>
       <br />
