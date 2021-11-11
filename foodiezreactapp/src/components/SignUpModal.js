@@ -89,10 +89,10 @@ export default function SignUpModal() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="info" onClick={handleSubmit}>
+          <Button variant="warning" onClick={handleSubmit}>
             Sign up
           </Button>
-          <Button variant="info" onClick={closeModal}>
+          <Button variant="warning" onClick={closeModal}>
             Close
           </Button>
         </Modal.Footer>

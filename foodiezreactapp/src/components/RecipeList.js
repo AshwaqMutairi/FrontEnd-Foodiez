@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import RecipeDetail from "./RecipeDetail";
+import RecipeItem from "./RecipeItem";
 import { Button } from "react-bootstrap";
 import recipeStore from "../stores/recipeStore";
 import { observer } from "mobx-react";
@@ -21,7 +21,7 @@ function RecipeList() {
   const recipes = recipeStore.recipes
     .filter((recipe) => recipe.category.name === category.name)
     .filter((recipe) => recipe.name.toLowerCase().includes(query.toLowerCase()))
-    .map((recipe) => <RecipeDetail recipe={recipe} />);
+    .map((recipe) => <RecipeItem recipe={recipe} />);
 
   return (
     <div>
@@ -32,7 +32,6 @@ function RecipeList() {
         </Button>
         <SearchBar setQuery={setQuery} />{" "}
       </p>
-
       <AddRecipeModal isOpen={isOpen} closeModal={closeModal} />
       <div className="col-md-auto text-center list">{recipes}</div>
     </div>
@@ -40,3 +39,6 @@ function RecipeList() {
 }
 
 export default observer(RecipeList);
+
+//make add recipe only appear to users
+//recipes not adding nor fetching?

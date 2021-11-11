@@ -20,13 +20,12 @@ function RecipeItem(props) {
       to={`/recipes/${recipe._id}`}
     >
       <div>
-        <h1>hello</h1>
         <h4>{recipe.name}</h4>
         <h4>{recipe.owner.name}</h4>
         <img className="card-image-top" src={recipe.image} alt={recipe.name} />
         <h4>{recipe.ingredients}</h4>
         <h4>{recipe.recipe}</h4>
-        <Button
+        {/* <Button
           className="buttons"
           variant="outline-warning"
           onClick={openModal}
@@ -37,10 +36,12 @@ function RecipeItem(props) {
           isOpen={isOpen}
           closeModal={closeModal}
           recipe={recipe}
-        />
+        /> */}
       </div>
     </Link>
   );
 }
 
 export default RecipeItem;
+
+//update button should appear only inside the recipe detail and only to users
